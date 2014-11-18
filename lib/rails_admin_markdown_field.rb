@@ -9,7 +9,7 @@ module RailsAdmin
 
           register_instance_option :pretty_value do
             if value.presence
-              Kramdown::Document.new(value, markdown_options).to_html
+              Kramdown::Document.new(value, markdown_options).to_html.html_safe
             end
           end
 
