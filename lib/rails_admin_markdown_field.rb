@@ -9,12 +9,12 @@ module RailsAdmin
 
           register_instance_option :pretty_value do
             if value.presence
-              renderer.render(value).html_safe
+              Kramdown::Document.new(value, markdown_options).to_html
             end
           end
 
-          register_instance_option :renderer do
-            Redcarpet::Markdown.new Redcarpet::Render::HTML
+          register_instance_option :markdown_options do
+            {}
           end
 
         end
