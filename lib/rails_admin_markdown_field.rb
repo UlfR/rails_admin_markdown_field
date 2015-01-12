@@ -1,4 +1,5 @@
 require 'rails_admin/config/fields/types/text'
+require 'kramdown'
 
 module RailsAdmin
   module Config
